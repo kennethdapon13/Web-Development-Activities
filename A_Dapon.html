@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script>
+      function validate() {
+        var nameStudent = document.getElementById("student_name").value;
+        var ageStudent = document.getElementById("student_age").value;
+        var cityStudent = document.getElementById("city").value;
+        var firstCheckbox = document.getElementById("painting");
+        var secondCheckbox = document.getElementById("dancing");
+        var thirdCheckbox = document.getElementById("sports");
+        var studentHobby = "";
+        if (firstCheckbox.checked) {
+          studentHobby = studentHobby + firstCheckbox.value + ",";
+        }
+        if (secondCheckbox.checked) {
+          thirdCheckbox = studentHobby + secondCheckbox.value + ",";
+          thirdCheckbox;
+        }
+        if (thirdCheckbox.checked) {
+          studentHobby = studentHobby + thirdCheckbox.value + ",";
+        }
+        document.getElementById("name_value").innerHTML = nameStudent;
+        document.getElementById("age_value").innerHTML = ageStudent;
+        document.getElementById("city_value").innerHTML = cityStudent;
+        document.getElementById("hobbies_value").innerHTML = studentHobby;
+      }
+    </script>
+  </head>
+  <body>
+    <div style="background-color: #4287f5" onsubmit="return false">
+      <form id="myForm">
+        <label>Student Name</label>
+        <input
+          type="text"
+          name="student_name"
+          id="student_name"
+          style="background-color: yellow"
+        />
+        <br />
+        <br />
+        <label id="age_label">Age</label>
+        <input
+          type="text"
+          name="student_age"
+          id="student_age"
+          style="background-color: yellow"
+        />
+        <br />
+        <p>Gender</p>
+        <label>M</label>
+        <input type="radio" name="gender" value="male" checked />
+        <label>F</label>
+        <input type="radio" name="gender" value="female" />
+        <br />
+        <br />
+        <label>City</label>
+        <select name="city" id="city">
+          <option>Manila</option>
+          <option>Quezon</option>
+          <option>San Juan</option>
+          <option>Makati</option>
+        </select>
+        <br />
+        <br />
+        <label>Hobby</label>
+        <br />
+        <input type="checkbox" name="painting" id="painting" value="painting" />
+        <label>Painting</label>
+        <br />
+        <input type="checkbox" name="dancing" id="dancing" value="dancing" />
+        <label>Dancing</label>
+        <br />
+        <input type="checkbox" name="sports" id="sports" value="sports" />
+        <label>Sports</label>
+        <br />
+        <button id="student_submit" onclick="validate();">Submit</button>
+        <div>
+          <span>Name:</span><span id="name_value"></span><br />
+          <span>Age:</span><span id="age_value"></span><br />
+          <span>City:</span><span id="city_value"></span><br />
+          <span>Hobbies:</span><span id="hobbies_value"></span><br />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
